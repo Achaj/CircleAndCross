@@ -41,5 +41,6 @@
       <Label fx:id="wynik" layoutX="20.0" layoutY="69.0" />
       <Button layoutX="517.0" layoutY="17.0" mnemonicParsing="false" onAction="#newGame" text="Nowa GRA" />
       <CheckBox fx:id="typPlayer" layoutX="426.0" layoutY="55.0" mnemonicParsing="false" text="graj z komputerem L1" />
+      <CheckBox fx:id="typPlayer2" layoutX="426.0" layoutY="78.0" mnemonicParsing="false" text="graj z komputerem L2" />
    </children>
 </AnchorPane>
