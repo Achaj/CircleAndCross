@@ -244,11 +244,11 @@ public class PlanszaSceneController {
                        int depth, Boolean isMax) {
         int score = evaluate(board);
 
-        // maximalizer value
+        // max val
         if (score == 10)
             return score;
 
-        // minimmalizar value
+        // min val
         if (score == -10)
             return score;
 
@@ -256,7 +256,7 @@ public class PlanszaSceneController {
         if (isMovesLeft(board) == false)
             return 0;
 
-        // If this maximizer's move
+        // max ruch
         if (isMax) {
             int best = -1000;
 
@@ -279,24 +279,22 @@ public class PlanszaSceneController {
             return best;
         }
 
-        // If this minimizer's move
+        // minmalizer ruch
         else {
             int best = 1000;
 
-            // Traverse all cells
+        //przeleć po komurkach
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    // Check if cell is empty
+                    // czy puste
                     if (board[i][j] == '_') {
-                        // Make the move
+                        // ruch człowieka
                         board[i][j] = opponent;
 
-                        // Call minimax recursively and choose
-                        // the minimum value
+                        // Cwybieranie minimum
                         best = Math.min(best, minimax(board,
                                 depth + 1, !isMax));
 
-                        // Undo the move
                         board[i][j] = '_';
                     }
                 }
